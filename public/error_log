@@ -1,0 +1,14 @@
+[23-Mar-2026 15:53:56 UTC] PHP Fatal error:  Uncaught RuntimeException: Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.4.0". You are running 8.1.33. in /home/experth2/test.experthomeductcleaning.com/vendor/composer/platform_check.php:22
+Stack trace:
+#0 /home/experth2/test.experthomeductcleaning.com/vendor/composer/autoload_real.php(25): require()
+#1 /home/experth2/test.experthomeductcleaning.com/vendor/autoload.php(22): ComposerAutoloaderInitc57754c93ae34ac3b9b716a0fd2f2149::getLoader()
+#2 /home/experth2/test.experthomeductcleaning.com/public/index.php(14): require('/home/experth2/...')
+#3 {main}
+  thrown in /home/experth2/test.experthomeductcleaning.com/vendor/composer/platform_check.php on line 22
+[23-Mar-2026 15:55:56 UTC] PHP Fatal error:  Uncaught RuntimeException: Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.4.0". You are running 8.1.33. in /home/experth2/test.experthomeductcleaning.com/vendor/composer/platform_check.php:22
+Stack trace:
+#0 /home/experth2/test.experthomeductcleaning.com/vendor/composer/autoload_real.php(25): require()
+#1 /home/experth2/test.experthomeductcleaning.com/vendor/autoload.php(22): ComposerAutoloaderInitc57754c93ae34ac3b9b716a0fd2f2149::getLoader()
+#2 /home/experth2/test.experthomeductcleaning.com/public/index.php(14): require('/home/experth2/...')
+#3 {main}
+  thrown in /home/experth2/test.experthomeductcleaning.com/vendor/composer/platform_check.php on line 22
