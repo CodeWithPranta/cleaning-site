@@ -1,84 +1,107 @@
 @extends('layouts.app')
 @section('content')
 
-<section class="relative pt-40 pb-20 lg:pt-56 lg:pb-32 bg-slate-50 overflow-hidden">
-    <div class="absolute top-0 left-0 w-full h-full opacity-40 pointer-events-none">
-        <div class="absolute -top-24 -left-24 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
-        <div class="absolute top-1/2 -right-24 w-80 h-80 bg-blue-400/10 rounded-full blur-3xl"></div>
+<section class="relative pt-40 pb-20 lg:pt-56 lg:pb-32 overflow-hidden">
+
+    {{-- Background Image with Blur --}}
+    <div class="absolute inset-0 z-0">
+        <img
+            src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80&fit=crop"
+            alt=""
+            class="w-full h-full object-cover object-center"
+        />
+        {{-- Dark overlay for text readability --}}
+        <div class="absolute inset-0 bg-slate-900/70 backdrop-blur-[2px]"></div>
+        {{-- Gradient overlay for depth --}}
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/60 to-slate-900/20"></div>
+        {{-- Blue tint accent on left --}}
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_0%_50%,rgba(59,130,246,0.15)_0%,transparent_60%)]"></div>
     </div>
 
     <div class="container mx-auto px-4 relative z-10">
         <div class="grid lg:grid-cols-2 gap-16 items-center">
-            
-            <div>
-                <div class="inline-flex items-center gap-2 bg-white border border-slate-200 px-4 py-2 rounded-full shadow-sm mb-6">
-                    <span class="flex h-2 w-2 rounded-full bg-emerald-500 animate-ping"></span>
-                    <span class="text-xs font-black uppercase tracking-widest text-slate-700">Premium Home Care</span>
+
+            <div class="order-1 lg:order-1">
+                <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full shadow-sm mb-6">
+                    <span class="flex h-2 w-2 rounded-full bg-emerald-400 animate-ping"></span>
+                    <span class="text-xs font-black uppercase tracking-widest text-white">Premium Home Care</span>
                 </div>
 
-                <h1 class="text-5xl lg:text-7xl font-black text-slate-900 leading-[1.1] mb-8">
+                <h1 class="text-5xl lg:text-7xl font-black text-white leading-[1.1] mb-8 tracking-tight">
                     Total Home <br>
-                    <span class="text-primary italic font-light">Revitalization.</span>
+                    <span class="text-blue-400 italic font-light">Revitalization.</span>
                 </h1>
 
-                <p class="text-lg text-slate-500 mb-10 max-w-lg leading-relaxed">
+                <p class="text-lg text-slate-300 mb-10 max-w-lg leading-relaxed">
                     From your air ducts to your carpets, Purix delivers hospital-grade cleaning solutions. Experience a healthier, fresher home today.
                 </p>
 
                 <div class="flex flex-wrap gap-3 mb-10">
-                    <span class="px-4 py-2 bg-white border border-slate-200 rounded-xl text-sm font-bold text-slate-700 shadow-sm flex items-center gap-2">
-                        <i class="fa-solid fa-wind text-primary"></i> Air Duct
+                    <span class="px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl text-sm font-bold text-white flex items-center gap-2 hover:bg-white/20 transition-colors cursor-default">
+                        <i class="fa-solid fa-wind text-blue-400"></i> Air Duct
                     </span>
-                    <span class="px-4 py-2 bg-white border border-slate-200 rounded-xl text-sm font-bold text-slate-700 shadow-sm flex items-center gap-2">
-                        <i class="fa-solid fa-rug text-primary"></i> Carpet
+                    <span class="px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl text-sm font-bold text-white flex items-center gap-2 hover:bg-white/20 transition-colors cursor-default">
+                        <i class="fa-solid fa-soap text-blue-400"></i> Carpet
                     </span>
-                    <span class="px-4 py-2 bg-white border border-slate-200 rounded-xl text-sm font-bold text-slate-700 shadow-sm flex items-center gap-2">
-                        <i class="fa-solid fa-fire-burner text-primary"></i> Dryer Vent
+                    <span class="px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl text-sm font-bold text-white flex items-center gap-2 hover:bg-white/20 transition-colors cursor-default">
+                        <i class="fa-solid fa-fire text-blue-400"></i> Dryer Vent
                     </span>
-                    <span class="px-4 py-2 bg-white border border-slate-200 rounded-xl text-sm font-bold text-slate-700 shadow-sm flex items-center gap-2">
-                        <i class="fa-solid fa-house-chimney text-primary"></i> Home Cleaning
+                    <span class="px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl text-sm font-bold text-white flex items-center gap-2 hover:bg-white/20 transition-colors cursor-default">
+                        <i class="fa-solid fa-house-chimney text-blue-400"></i> Home Cleaning
                     </span>
                 </div>
 
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="#contact" class="bg-primary text-white px-10 py-5 rounded-2xl font-black text-lg hover:bg-primary-dark transition shadow-xl shadow-primary/20 text-center">
+                    <a href="#contact" class="bg-primary text-white px-10 py-5 rounded-2xl font-black text-lg hover:bg-primary-dark transition-all transform hover:-translate-y-1 shadow-xl shadow-primary/30 text-center">
                         Get Free Estimate
                     </a>
-                    <a href="tel:+14699608366" class="bg-white text-slate-900 border border-slate-200 px-10 py-5 rounded-2xl font-black text-lg hover:bg-slate-50 transition text-center flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-phone text-primary"></i> Call Now
+                    <a href="tel:+14699608366" class="bg-white/10 backdrop-blur-sm text-white border border-white/30 px-10 py-5 rounded-2xl font-black text-lg hover:bg-white/20 transition-all transform hover:-translate-y-1 text-center flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-phone text-blue-400"></i> Call Now
                     </a>
                 </div>
             </div>
 
-            <div class="relative grid grid-cols-2 gap-4">
-                <div class="space-y-4">
-                    <div class="bg-white p-6 rounded-[2rem] shadow-xl border border-slate-100 mt-8">
-                        <i class="fa-solid fa-sparkles text-3xl text-yellow-400 mb-4"></i>
-                        <h4 class="font-bold text-slate-900">Sanitization</h4>
-                        <p class="text-xs text-slate-400 mt-1">99.9% Bacteria Removal</p>
+            <div class="relative grid grid-cols-2 gap-4 order-2 lg:order-2">
+                <div class="space-y-4 animate-float">
+                    <div class="bg-white/10 backdrop-blur-md p-6 rounded-[2rem] shadow-xl border border-white/20 mt-8 hover:scale-105 hover:bg-white/15 transition-all duration-500">
+                        <i class="fa-solid fa-shield-virus text-3xl text-emerald-400 mb-4"></i>
+                        <h4 class="font-bold text-white">Sanitization</h4>
+                        <p class="text-xs text-white/60 mt-1">99.9% Bacteria Removal</p>
                     </div>
-                    <div class="bg-primary p-6 rounded-[2rem] shadow-xl text-white">
+                    <div class="bg-primary/80 backdrop-blur-md p-6 rounded-[2rem] shadow-xl border border-primary/50 text-white hover:scale-105 hover:bg-primary/90 transition-all duration-500">
                         <i class="fa-solid fa-box-open text-3xl mb-4"></i>
                         <h4 class="font-bold">Move-In/Out</h4>
                         <p class="text-xs opacity-80 mt-1">Stress-Free Cleaning</p>
                     </div>
                 </div>
-                <div class="space-y-4">
-                    <div class="bg-slate-900 p-6 rounded-[2rem] shadow-xl text-white">
-                        <i class="fa-solid fa-hard-hat text-3xl mb-4"></i>
+                <div class="space-y-4 pt-12">
+                    <div class="bg-white/10 backdrop-blur-md p-6 rounded-[2rem] shadow-xl border border-white/20 text-white hover:scale-105 hover:bg-white/15 transition-all duration-500">
+                        <i class="fa-solid fa-helmet-safety text-3xl text-amber-400 mb-4"></i>
                         <h4 class="font-bold">Post-Construction</h4>
                         <p class="text-xs opacity-60 mt-1">Dust-Free Finish</p>
                     </div>
-                    <div class="bg-white p-6 rounded-[2rem] shadow-xl border border-slate-100">
-                        <i class="fa-solid fa-couch text-3xl text-primary mb-4"></i>
-                        <h4 class="font-bold text-slate-900">Upholstery</h4>
-                        <p class="text-xs text-slate-400 mt-1">Fabric Protection</p>
+                    <div class="bg-white/10 backdrop-blur-md p-6 rounded-[2rem] shadow-xl border border-white/20 hover:scale-105 hover:bg-white/15 transition-all duration-500">
+                        <i class="fa-solid fa-couch text-3xl text-blue-400 mb-4"></i>
+                        <h4 class="font-bold text-white">Upholstery</h4>
+                        <p class="text-xs text-white/60 mt-1">Fabric Protection</p>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 </section>
+
+<style>
+    @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-15px); }
+        100% { transform: translateY(0px); }
+    }
+    .animate-float {
+        animation: float 6s ease-in-out infinite;
+    }
+</style>
 
 <a href="https://wa.me/14699608366" target="_blank" class="fixed bottom-8 right-8 z-[60] bg-emerald-500 text-white w-16 h-16 rounded-full shadow-2xl flex items-center justify-center text-3xl hover:scale-110 transition-transform group">
     <i class="fa-brands fa-whatsapp"></i>
@@ -229,7 +252,7 @@
                     <i class="fa-solid fa-wind text-2xl text-primary group-hover:text-white"></i>
                 </div>
                 <h4 class="text-xl font-bold text-slate-900 mb-4">Air Duct Cleaning</h4>
-                <button onclick="openServiceModal('air-duct')" class="text-primary font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all">
+                <button type="button" onclick="openServiceModal('air-duct')" class="text-primary font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all">
                     Learn More <i class="fa-solid fa-arrow-right"></i>
                 </button>
             </div>
@@ -239,7 +262,7 @@
                     <i class="fa-solid fa-smog text-2xl text-orange-500 group-hover:text-white"></i>
                 </div>
                 <h4 class="text-xl font-bold text-slate-900 mb-4">Dryer Vent Cleaning</h4>
-                <button onclick="openServiceModal('dryer-vent')" class="text-primary font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all">
+                <button type="button" onclick="openServiceModal('dryer-vent')" class="text-primary font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all">
                     Learn More <i class="fa-solid fa-arrow-right"></i>
                 </button>
             </div>
@@ -249,7 +272,7 @@
                     <i class="fa-solid fa-soap text-2xl text-emerald-500 group-hover:text-white"></i>
                 </div>
                 <h4 class="text-xl font-bold text-slate-900 mb-4">Carpet Cleaning</h4>
-                <button onclick="openServiceModal('carpet')" class="text-primary font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all">
+                <button type="button" onclick="openServiceModal('carpet')" class="text-primary font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all">
                     Learn More <i class="fa-solid fa-arrow-right"></i>
                 </button>
             </div>
@@ -259,150 +282,369 @@
                     <i class="fa-solid fa-house-chimney text-2xl text-purple-500 group-hover:text-white"></i>
                 </div>
                 <h4 class="text-xl font-bold text-slate-900 mb-4">Home Cleaning</h4>
-                <button onclick="openServiceModal('home-cleaning')" class="text-primary font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all">
+                <button type="button" onclick="openServiceModal('home-cleaning')" class="text-primary font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all">
                     Learn More <i class="fa-solid fa-arrow-right"></i>
                 </button>
             </div>
         </div>
     </div>
-
 </section>
-<div id="serviceModal" class="fixed inset-0 z-[150] flex items-center justify-center bg-slate-900/90 backdrop-blur-sm hidden p-4 my-4" onclick="handleOutsideClick(event)">
-    <div class="bg-white w-full max-w-2xl rounded-[3rem] overflow-hidden shadow-2xl relative">
-        
-        <button onclick="closeServiceModal()" class="absolute top-6 right-6 w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center text-slate-500 hover:bg-red-50 hover:text-red-500 transition-all z-30">
-            <i class="fa-solid fa-xmark"></i>
+
+<!-- MODAL OVERLAY -->
+<div id="serviceModal"
+     class="fixed inset-0 z-[150] flex items-end sm:items-center justify-center bg-slate-900/80 backdrop-blur-sm hidden p-0 sm:p-4"
+     onclick="handleOutsideClick(event)">
+
+    <div class="bg-white w-full sm:max-w-2xl sm:rounded-[2.5rem] rounded-t-[2rem] overflow-hidden shadow-2xl relative flex flex-col max-h-[95dvh] sm:max-h-[90dvh]">
+
+        <!-- CLOSE BUTTON -->
+        <button type="button" onclick="closeServiceModal()"
+                class="absolute top-4 right-4 z-40 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-slate-500 hover:bg-red-50 hover:text-red-500 transition-all shadow-md border border-slate-100">
+            <i class="fa-solid fa-xmark text-sm"></i>
         </button>
 
-        <div id="mediaContainer" class="relative w-full h-72 bg-slate-900 flex items-center justify-center">
+        <!-- VIDEO — fixed height, does not scroll -->
+        <div id="mediaContainer" class="relative w-full h-56 sm:h-72 bg-slate-900 flex-shrink-0 flex items-center justify-center overflow-hidden">
             <video id="modalServiceVideo" class="w-full h-full object-cover hidden" controls playsinline muted>
                 <source src="" type="video/mp4">
             </video>
-            
-            <div id="videoPlaceholder" class="text-center">
-                <div class="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i class="fa-solid fa-clapperboard text-3xl text-primary"></i>
+            <div id="videoPlaceholder" class="text-center px-4">
+                <div class="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fa-solid fa-clapperboard text-3xl text-white/50"></i>
                 </div>
                 <p class="text-slate-400 text-sm font-medium">Service Demonstration</p>
             </div>
         </div>
 
-        <div class="p-8 lg:p-10">
-            <h3 id="serviceTitle" class="text-3xl font-black text-slate-900 mb-2 tracking-tight"></h3>
-            <p id="serviceDescription" class="text-slate-600 leading-relaxed mb-6"></p>
+        <!-- SCROLLABLE CONTENT — modal-scroll class is required here -->
+        <div id="modalScrollArea" class="overflow-y-auto flex-1 modal-scroll">
+            <div class="p-7 sm:p-10">
+                <h2 id="serviceTitle" class="text-2xl sm:text-3xl font-black text-slate-900 mb-3 leading-tight tracking-tight"></h2>
+                <p id="serviceDescription" class="text-slate-600 leading-relaxed mb-6 text-[15px]"></p>
 
-            <div id="serviceHighlights" class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
+                <div id="serviceHighlights" class="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-8"></div>
+
+                <div id="serviceRichContent" class="space-y-8"></div>
+
+                <div class="flex flex-col sm:flex-row gap-3 mt-10 pb-1">
+                    <a href="#contact" onclick="closeServiceModal()"
+                       class="flex-1 bg-primary text-white text-center py-4 rounded-2xl font-bold shadow-lg shadow-primary/20 hover:bg-primary-dark transition text-sm">
+                        Get a Free Quote
+                    </a>
+                    <a href="https://wa.me/14699608366"
+                       class="flex-1 bg-emerald-500 text-white text-center py-4 rounded-2xl font-bold hover:bg-emerald-600 transition flex items-center justify-center gap-2 text-sm">
+                        <i class="fa-brands fa-whatsapp"></i> Chat with Us
+                    </a>
                 </div>
-            
-            <div class="flex flex-col sm:flex-row gap-4">
-                <a href="#contact" onclick="closeServiceModal()" class="flex-1 bg-primary text-white text-center py-4 rounded-2xl font-bold shadow-lg shadow-primary/20 hover:bg-primary-dark transition">
-                    Get a Free Quote
-                </a>
-                <a href="https://wa.me/14699608366" class="flex-1 bg-emerald-500 text-white text-center py-4 rounded-2xl font-bold hover:bg-emerald-600 transition flex items-center justify-center gap-2">
-                    <i class="fa-brands fa-whatsapp"></i> Chat with Us
-                </a>
             </div>
         </div>
+
     </div>
 </div>
 
+<style>
+    .modal-scroll::-webkit-scrollbar { width: 5px; }
+    .modal-scroll::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 10px; }
+    .modal-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+    .modal-scroll::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+</style>
+
 <script>
-    const serviceData = {
-        'air-duct': {
-            title: 'Professional Air Duct Cleaning',
-            description: 'Our high-pressure vacuum extraction removes 99.9% of dust and allergens from your home HVAC system.',
-            highlights: ['NADCA Certified', 'HEPA-Filtration', 'Full Sanitation'],
-            video: "{{ asset('videos/title-gout.mp4') }}"
+const serviceData = {
+    'air-duct': {
+        title: 'Professional Air Duct Cleaning for Healthier, Cleaner Air',
+        description: 'Breathe cleaner, healthier air with expert air duct cleaning services from Purix Home Services. We remove dust, allergens, mold spores, and contaminants from your HVAC system to improve indoor air quality, boost efficiency, and protect your family\'s health.',
+        highlights: ['NADCA Certified', 'HEPA-Filtration', 'Full Sanitation', 'Eco-Safe', 'Licensed & Insured', 'Same-Day Service'],
+        video: "{{ asset('videos/air-duct.mp4') }}",
+        richContent: [
+            {
+                type: 'section',
+                heading: 'Why Air Duct Cleaning Matters',
+                body: 'Over time, your air ducts collect harmful pollutants. When your system runs, these circulate throughout your home.',
+                list: ['Dust & debris', 'Pet dander', 'Mold & bacteria', 'Pollen & allergens'],
+                callout: 'Our solution: Deep, professional cleaning that eliminates buildup and restores clean airflow.'
+            },
+            {
+                type: 'section',
+                heading: 'Signs You Need Air Duct Cleaning',
+                body: 'You should schedule service if you notice any of the following:',
+                list: [
+                    'Increased dust around your home',
+                    'Allergy or respiratory issues',
+                    'Musty or unpleasant odors',
+                    'Uneven airflow in rooms',
+                    'Recent renovation or construction',
+                    'Visible mold inside ducts'
+                ]
+            },
+            {
+                type: 'process',
+                heading: 'Our Air Duct Cleaning Process',
+                body: 'We follow a powerful, industry-grade cleaning system:',
+                steps: [
+                    { icon: 'fa-magnifying-glass', label: 'Full HVAC Inspection', desc: 'Camera-based diagnostic to assess buildup and identify problem areas.' },
+                    { icon: 'fa-wind', label: 'High-Power Vacuum', desc: 'Negative pressure extraction removes 99.9% of dust and debris.' },
+                    { icon: 'fa-spray-can-sparkles', label: 'Duct Sanitization', desc: 'EPA-approved antimicrobial treatment eliminates mold and bacteria.' },
+                    { icon: 'fa-circle-check', label: 'Final Air Quality Test', desc: 'Verify airflow and confirm your HVAC is running clean and efficiently.' }
+                ]
+            }
+        ]
+    },
+    'dryer-vent': {
+    title: 'Dryer Vent Safety Cleaning',
+    description: 'Protect your home and family with professional dryer vent cleaning from Purix Home Services. Lint buildup in dryer vents is one of the leading causes of house fires — our expert service removes blockages, restores airflow, and keeps your dryer running safely and efficiently.',
+    highlights: ['Fire Prevention', 'Energy Efficiency', 'Lint Removal', 'Code Compliant', 'All Vent Types', 'Same-Day Service'],
+    video: "{{ asset('videos/dryer-vent.mp4') }}",
+    richContent: [
+        {
+            type: 'section',
+            heading: 'Why Dryer Vent Cleaning is Critical',
+            body: 'Every load of laundry pushes lint, moisture, and debris through your dryer vent. Over time, this builds up into a serious hazard.',
+            list: [
+                'Lint is highly flammable — buildup is a leading fire risk',
+                'Blocked vents trap heat, overworking your dryer motor',
+                'Moisture buildup encourages mold growth in the vent line',
+                'Longer drying cycles waste energy and raise utility bills',
+                'Overheating shortens the lifespan of your appliance'
+            ],
+            callout: 'The U.S. Fire Administration recommends cleaning dryer vents at least once per year — more often with heavy use or pets.'
         },
-        'dryer-vent': {
-            title: 'Dryer Vent Safety',
-            description: 'Prevent dangerous lint fires and improve drying speed with our professional vent clearing service.',
-            highlights: ['Fire Prevention', 'Energy Efficiency', 'Lint Removal'],
-            video: "{{ asset('videos/dryer-vent.mp4') }}"
+        {
+            type: 'section',
+            heading: 'Signs Your Dryer Vent Needs Cleaning',
+            body: 'Don\'t wait for a fire to take action. Schedule service if you notice:',
+            list: [
+                'Clothes take more than one cycle to dry fully',
+                'Dryer feels very hot to the touch after a cycle',
+                'Burning or musty smell during drying',
+                'Laundry room feels unusually humid',
+                'Vent flap outside doesn\'t open when dryer runs',
+                'It\'s been over 12 months since last cleaning'
+            ]
         },
-        'carpet': {
-            title: 'Carpet Steam Cleaning',
-            description: 'Deep extraction cleaning that restores your carpets to their original beauty and freshness.',
-            highlights: ['Stain Removal', 'Pet Safe', 'Fast Dry'],
-            video: "{{ asset('videos/wood.mp4') }}" // Example with no video
-        },
-        'home-cleaning': {
-            title: 'Deep Home Cleaning',
-            description: 'Comprehensive top-to-bottom cleaning for every room in your residence.',
-            highlights: ['Eco-Friendly', 'Bonded & Insured', 'Kitchen/Bath Focus'],
-            video: "{{ asset('videos/home.mp4') }}"
+        {
+            type: 'process',
+            heading: 'Our Dryer Vent Cleaning Process',
+            body: 'A fast, thorough service that takes 45–90 minutes:',
+            steps: [
+                { icon: 'fa-magnifying-glass', label: 'Vent Inspection', desc: 'We assess vent length, bends, and blockage level before starting.' },
+                { icon: 'fa-rotate', label: 'Rotary Brush Clearing', desc: 'Flexible rotary brush breaks apart and dislodges all lint deposits.' },
+                { icon: 'fa-wind', label: 'High-Power Vacuum', desc: 'Industrial vacuum captures all debris from end to end of the vent line.' },
+                { icon: 'fa-circle-check', label: 'Airflow Verification', desc: 'We confirm proper airflow and inspect the exterior vent cap before leaving.' }
+            ]
         }
-    };
+    ]
+},
 
-    function openServiceModal(key) {
-        const data = serviceData[key];
-        if (!data) return;
-
-        const videoElement = document.getElementById('modalServiceVideo');
-        const placeholder = document.getElementById('videoPlaceholder');
-
-        // Update Text
-        document.getElementById('serviceTitle').innerText = data.title;
-        document.getElementById('serviceDescription').innerText = data.description;
-
-        // Video Logic
-        if (data.video && data.video !== "") {
-            videoElement.src = data.video;
-            videoElement.classList.remove('hidden');
-            placeholder.classList.add('hidden');
-            videoElement.play();
-        } else {
-            videoElement.classList.add('hidden');
-            placeholder.classList.remove('hidden');
-            videoElement.pause();
-            videoElement.src = "";
+'carpet': {
+    title: 'Professional Carpet Steam Cleaning',
+    description: 'Restore your carpets to like-new condition with deep hot water extraction cleaning from Purix Home Services. We remove embedded dirt, allergens, stains, and odors that regular vacuuming simply cannot reach — leaving your home fresher, cleaner, and healthier.',
+    highlights: ['Stain Removal', 'Pet Safe', 'Fast Dry', 'Allergen Removal', 'Odor Elimination', 'HWE Method'],
+    video: "{{ asset('videos/carpet.mp4') }}",
+    richContent: [
+        {
+            type: 'section',
+            heading: 'Why Professional Carpet Cleaning Matters',
+            body: 'Carpets trap far more than visible dirt. Without deep cleaning, they silently harbor harmful particles that affect your indoor air quality.',
+            list: [
+                'Dust mites and allergens embedded deep in carpet fibers',
+                'Pet dander, hair, and odor-causing bacteria',
+                'Mold spores thriving in damp or humid conditions',
+                'Tracked-in pollutants, pesticides, and outdoor contaminants',
+                'Set-in stains that worsen over time without treatment'
+            ],
+            callout: 'Carpet manufacturers and the EPA recommend professional deep cleaning every 12–18 months to maintain air quality and carpet warranty.'
+        },
+        {
+            type: 'section',
+            heading: 'Signs Your Carpet Needs Professional Cleaning',
+            body: 'Book a service if you notice any of the following:',
+            list: [
+                'Visible stains that won\'t respond to spot treatment',
+                'Persistent musty, pet, or stale odors',
+                'Allergy or asthma symptoms worsening indoors',
+                'Carpet looks dull or matted despite regular vacuuming',
+                'High-traffic areas noticeably darker than the rest',
+                'Recent spills, flooding, or pet accidents'
+            ]
+        },
+        {
+            type: 'process',
+            heading: 'Our Carpet Cleaning Process',
+            body: 'We use truck-mounted hot water extraction — the most effective method recommended by all major carpet manufacturers:',
+            steps: [
+                { icon: 'fa-spray-can', label: 'Pre-Treatment', desc: 'Eco-safe conditioning solution is applied to loosen deep-set dirt and stains.' },
+                { icon: 'fa-fire', label: 'Hot Water Extraction', desc: 'High-temperature water is injected deep into fibers and immediately extracted with debris.' },
+                { icon: 'fa-droplet-slash', label: 'Spot Treatment', desc: 'Stubborn stains receive targeted treatment with professional-grade solutions.' },
+                { icon: 'fa-fan', label: 'Fast-Dry Finish', desc: 'Carpets are groomed and left ready to walk on within 2–4 hours.' }
+            ]
         }
+    ]
+},
 
-        // Highlights Logic
-        const highlightsContainer = document.getElementById('serviceHighlights');
-        highlightsContainer.innerHTML = data.highlights.map(item => `
-            <div class="flex items-center gap-2 text-sm text-slate-700 font-bold bg-slate-50 p-3 rounded-xl border border-slate-100">
-                <i class="fa-solid fa-circle-check text-primary"></i> ${item}
-            </div>
-        `).join('');
+'home-cleaning': {
+    title: 'Professional Deep Home Cleaning',
+    description: 'Give your home a thorough, top-to-bottom reset with deep cleaning services from Purix Home Services. Our trained, insured cleaners tackle every room with eco-friendly products, attention to detail, and a commitment to results that go far beyond a standard surface clean.',
+    highlights: ['Eco-Friendly', 'Bonded & Insured', 'Kitchen/Bath Focus', 'All Rooms', 'Trained Staff', 'Satisfaction Guaranteed'],
+    video: "{{ asset('videos/home.mp4') }}",
+    richContent: [
+        {
+            type: 'section',
+            heading: 'What\'s Included in a Deep Clean',
+            body: 'Our deep home cleaning covers areas that routine cleaning misses entirely:',
+            list: [
+                'Kitchen: appliance exteriors, inside microwave, cabinet fronts, backsplash, sink scrub',
+                'Bathrooms: grout scrubbing, fixture descaling, toilet deep clean, mirror polish',
+                'Living areas: baseboards, door frames, light switches, ceiling fans, window sills',
+                'Bedrooms: under-bed vacuuming, furniture dusting, closet floors',
+                'Floors: vacuum, mop, and edge cleaning on all hard and soft surfaces',
+                'Trash removal and linen change (on request)'
+            ],
+            callout: 'First-time deep cleans typically take 3–6 hours depending on home size. We stay until the job is done right.'
+        },
+        {
+            type: 'section',
+            heading: 'When to Book a Deep Clean',
+            body: 'A deep clean is the right choice when:',
+            list: [
+                'Moving into a new home or vacating a rental',
+                'After a renovation or construction project',
+                'Seasonal reset (spring or pre-holiday cleaning)',
+                'Before or after hosting a large gathering',
+                'Your home hasn\'t had a thorough clean in 3+ months',
+                'Post-illness sanitization of the entire home'
+            ]
+        },
+        {
+            type: 'process',
+            heading: 'How Our Home Cleaning Works',
+            body: 'A seamless, stress-free experience from booking to walkthrough:',
+            steps: [
+                { icon: 'fa-calendar-check', label: 'Easy Booking', desc: 'Book online or by phone — we confirm your slot within 2 hours.' },
+                { icon: 'fa-clipboard-list', label: 'Walk-Through Assessment', desc: 'Our team reviews your home\'s priorities and any specific areas of concern.' },
+                { icon: 'fa-broom', label: 'Systematic Deep Clean', desc: 'We work room by room using our comprehensive checklist — nothing is skipped.' },
+                { icon: 'fa-star', label: 'Final Inspection', desc: 'We do a quality walkthrough with you before we consider the job complete.' }
+            ]
+        }
+    ]
+}
+};
 
-        document.getElementById('serviceModal').classList.remove('hidden');
-        document.body.style.overflow = 'hidden';
-    }
+function buildRichContent(richContent) {
+    if (!richContent || !richContent.length) return '';
+    return richContent.map(section => {
+        let html = '<div>';
+        html += `<h3 class="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2">
+            <span class="w-1 h-5 bg-primary rounded-full inline-block"></span>${section.heading}
+        </h3>`;
+        if (section.body) {
+            html += `<p class="text-slate-600 text-[14px] leading-relaxed mb-3">${section.body}</p>`;
+        }
+        if (section.list) {
+            html += '<ul class="space-y-2 mb-3">' +
+                section.list.map(item => `
+                    <li class="flex items-start gap-2 text-[14px] text-slate-700">
+                        <i class="fa-solid fa-circle-check text-primary mt-0.5 flex-shrink-0"></i>
+                        <span>${item}</span>
+                    </li>`).join('') +
+                '</ul>';
+        }
+        if (section.callout) {
+            html += `<div class="bg-blue-50 border border-blue-100 rounded-2xl p-4 text-[13px] text-blue-800 font-medium">${section.callout}</div>`;
+        }
+        if (section.steps) {
+            html += '<div class="grid sm:grid-cols-2 gap-3 mt-2">' +
+                section.steps.map((step, i) => `
+                    <div class="bg-slate-50 border border-slate-100 rounded-2xl p-4 flex gap-3 items-start">
+                        <div class="w-9 h-9 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid ${step.icon} text-primary text-sm"></i>
+                        </div>
+                        <div>
+                            <p class="text-[13px] font-bold text-slate-800">${i + 1}. ${step.label}</p>
+                            <p class="text-[12px] text-slate-500 mt-0.5 leading-snug">${step.desc}</p>
+                        </div>
+                    </div>`).join('') +
+                '</div>';
+        }
+        html += '</div>';
+        return html;
+    }).join('<hr class="border-slate-100 my-2">');
+}
 
-    function closeServiceModal() {
-        const videoElement = document.getElementById('modalServiceVideo');
+function openServiceModal(key) {
+    const data = serviceData[key];
+    if (!data) return;
+
+    const videoElement = document.getElementById('modalServiceVideo');
+    const placeholder = document.getElementById('videoPlaceholder');
+
+    document.getElementById('serviceTitle').innerText = data.title;
+    document.getElementById('serviceDescription').innerText = data.description;
+
+    if (data.video) {
+        videoElement.src = data.video;
+        videoElement.classList.remove('hidden');
+        placeholder.classList.add('hidden');
+        videoElement.play().catch(() => {}); // catch autoplay block silently
+    } else {
+        videoElement.classList.add('hidden');
+        placeholder.classList.remove('hidden');
         videoElement.pause();
-        videoElement.src = "";
-        document.getElementById('serviceModal').classList.add('hidden');
-        document.body.style.overflow = '';
+        videoElement.src = '';
     }
 
-    function handleOutsideClick(event) {
-        if (event.target.id === 'serviceModal') closeServiceModal();
-    }
+    document.getElementById('serviceHighlights').innerHTML = data.highlights.map(item => `
+        <div class="flex items-center gap-2 text-xs text-slate-700 font-bold bg-slate-50 p-3 rounded-xl border border-slate-100">
+            <i class="fa-solid fa-circle-check text-primary"></i> ${item}
+        </div>`).join('');
+
+    document.getElementById('serviceRichContent').innerHTML = buildRichContent(data.richContent);
+
+    // Reset scroll using the ID (safer than querySelector)
+    document.getElementById('modalScrollArea').scrollTop = 0;
+
+    document.getElementById('serviceModal').classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeServiceModal() {
+    const videoElement = document.getElementById('modalServiceVideo');
+    videoElement.pause();
+    videoElement.src = '';
+    document.getElementById('serviceModal').classList.add('hidden');
+    document.body.style.overflow = '';
+}
+
+function handleOutsideClick(event) {
+    if (event.target.id === 'serviceModal') closeServiceModal();
+}
 </script>
 
-<section id="reviews" class="py-24 bg-slate-50 overflow-hidden">
-    <div class="container mx-auto px-4">
+<section id="reviews" class="py-24 bg-slate-900 overflow-hidden relative">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
+    
+    <div class="container mx-auto px-4 relative z-10">
         <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
             <div>
-                <h2 class="text-4xl font-bold text-slate-900">What Our Clients Say</h2>
-                <div class="flex gap-1 mt-4">
-                    <i class="fa-solid fa-star text-yellow-400"></i>
-                    <i class="fa-solid fa-star text-yellow-400"></i>
-                    <i class="fa-solid fa-star text-yellow-400"></i>
-                    <i class="fa-solid fa-star text-yellow-400"></i>
-                    <i class="fa-solid fa-star text-yellow-400"></i>
-                    <span class="ml-2 text-slate-500 font-medium">(4.9/5 Rating)</span>
+                <span class="text-primary font-bold uppercase tracking-[0.2em] text-xs mb-3 block">Testimonials</span>
+                <h2 class="text-4xl md:text-5xl font-black text-white">What Our <span class="italic font-light">Clients Say</span></h2>
+                <div class="flex gap-1 mt-4 items-center">
+                    <div class="flex gap-1">
+                        <i class="fa-solid fa-star text-yellow-400"></i>
+                        <i class="fa-solid fa-star text-yellow-400"></i>
+                        <i class="fa-solid fa-star text-yellow-400"></i>
+                        <i class="fa-solid fa-star text-yellow-400"></i>
+                        <i class="fa-solid fa-star text-yellow-400"></i>
+                    </div>
+                    <span class="ml-3 text-slate-400 font-medium">4.9/5 Based on 500+ Reviews</span>
                 </div>
             </div>
             
             <div class="flex gap-3">
-                <button onclick="scrollReviews('left')" class="w-12 h-12 rounded-full border border-slate-200 bg-white flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all shadow-sm">
+                <button onclick="scrollReviews('left')" class="w-14 h-14 rounded-2xl border border-white/10 bg-white/5 flex items-center justify-center text-white hover:bg-primary hover:border-primary transition-all shadow-xl backdrop-blur-md">
                     <i class="fa-solid fa-arrow-left"></i>
                 </button>
-                <button onclick="scrollReviews('right')" class="w-12 h-12 rounded-full border border-slate-200 bg-white flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all shadow-sm">
+                <button onclick="scrollReviews('right')" class="w-14 h-14 rounded-2xl border border-white/10 bg-white/5 flex items-center justify-center text-white hover:bg-primary hover:border-primary transition-all shadow-xl backdrop-blur-md">
                     <i class="fa-solid fa-arrow-right"></i>
                 </button>
             </div>
@@ -410,46 +652,70 @@
 
         <div id="review-slider" class="flex gap-8 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-8 scroll-smooth">
             
-            <div class="min-w-[100%] md:min-w-[45%] lg:min-w-[31%] snap-start bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
-                <p class="text-slate-600 italic mb-8 leading-relaxed">"Fantastic service! The air feels so much lighter and the technicians were very professional and clean."</p>
-                <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 bg-primary-light rounded-full flex items-center justify-center font-bold text-primary">SM</div>
-                    <div>
-                        <h5 class="font-bold">Sarah Miller</h5>
-                        <p class="text-xs text-slate-400 uppercase tracking-wider">Homeowner</p>
+            <div class="min-w-[100%] md:min-w-[45%] lg:min-w-[31%] snap-start bg-white p-10 rounded-[2.5rem] shadow-2xl relative group">
+                <i class="fa-solid fa-quote-right absolute top-10 right-10 text-slate-100 text-6xl group-hover:text-primary/10 transition-colors"></i>
+                <div class="relative z-10">
+                    <div class="flex items-center gap-2 mb-6 text-primary text-sm font-bold uppercase tracking-widest">
+                        <i class="fa-solid fa-wind"></i> Air Duct Cleaning
+                    </div>
+                    <p class="text-slate-600 italic mb-8 leading-relaxed text-lg">"The difference in air quality was immediate. My son's morning allergies have vanished since Purix cleaned our ducts. Professional and spotless!"</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center font-bold text-primary">SM</div>
+                        <div>
+                            <h5 class="font-bold text-slate-900">Sarah Miller</h5>
+                            <p class="text-xs text-slate-400 uppercase tracking-wider">Homeowner</p>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="min-w-[100%] md:min-w-[45%] lg:min-w-[31%] snap-start bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
-                <p class="text-slate-600 italic mb-8 leading-relaxed">"I never realized how much dust was in our dryer vent. They probably saved us from a house fire!"</p>
-                <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 bg-primary-light rounded-full flex items-center justify-center font-bold text-primary">JD</div>
-                    <div>
-                        <h5 class="font-bold">John Davis</h5>
-                        <p class="text-xs text-slate-400 uppercase tracking-wider">Property Manager</p>
+            <div class="min-w-[100%] md:min-w-[45%] lg:min-w-[31%] snap-start bg-white p-10 rounded-[2.5rem] shadow-2xl relative group">
+                <i class="fa-solid fa-quote-right absolute top-10 right-10 text-slate-100 text-6xl group-hover:text-primary/10 transition-colors"></i>
+                <div class="relative z-10">
+                    <div class="flex items-center gap-2 mb-6 text-orange-500 text-sm font-bold uppercase tracking-widest">
+                        <i class="fa-solid fa-fire"></i> Dryer Vent Safety
+                    </div>
+                    <p class="text-slate-600 italic mb-8 leading-relaxed text-lg">"Our dryer was taking two cycles to dry towels. One visit from Purix and it works like new. The amount of lint they removed was shocking—total lifesavers!"</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-orange-50 rounded-full flex items-center justify-center font-bold text-orange-500">JD</div>
+                        <div>
+                            <h5 class="font-bold text-slate-900">John Davis</h5>
+                            <p class="text-xs text-slate-400 uppercase tracking-wider">Property Manager</p>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="min-w-[100%] md:min-w-[45%] lg:min-w-[31%] snap-start bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
-                <p class="text-slate-600 italic mb-8 leading-relaxed">"Very transparent with their pricing. No hidden fees and the before/after photos were mind-blowing."</p>
-                <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 bg-primary-light rounded-full flex items-center justify-center font-bold text-primary">RK</div>
-                    <div>
-                        <h5 class="font-bold">Robert King</h5>
-                        <p class="text-xs text-slate-400 uppercase tracking-wider">Business Owner</p>
+            <div class="min-w-[100%] md:min-w-[45%] lg:min-w-[31%] snap-start bg-white p-10 rounded-[2.5rem] shadow-2xl relative group">
+                <i class="fa-solid fa-quote-right absolute top-10 right-10 text-slate-100 text-6xl group-hover:text-primary/10 transition-colors"></i>
+                <div class="relative z-10">
+                    <div class="flex items-center gap-2 mb-6 text-emerald-500 text-sm font-bold uppercase tracking-widest">
+                        <i class="fa-solid fa-soap"></i> Carpet Cleaning
+                    </div>
+                    <p class="text-slate-600 italic mb-8 leading-relaxed text-lg">"I thought our living room carpet was ruined by pet stains. They made it look brand new and it was dry in just a few hours. Incredible equipment!"</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-emerald-50 rounded-full flex items-center justify-center font-bold text-emerald-500">RK</div>
+                        <div>
+                            <h5 class="font-bold text-slate-900">Robert King</h5>
+                            <p class="text-xs text-slate-400 uppercase tracking-wider">Verified Client</p>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="min-w-[100%] md:min-w-[45%] lg:min-w-[31%] snap-start bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
-                <p class="text-slate-600 italic mb-8 leading-relaxed">"Prompt, professional, and powerful equipment. My house smells fresh for the first time in years."</p>
-                <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 bg-primary-light rounded-full flex items-center justify-center font-bold text-primary">AL</div>
-                    <div>
-                        <h5 class="font-bold">Amy Lewis</h5>
-                        <p class="text-xs text-slate-400 uppercase tracking-wider">Verified Client</p>
+            <div class="min-w-[100%] md:min-w-[45%] lg:min-w-[31%] snap-start bg-white p-10 rounded-[2.5rem] shadow-2xl relative group">
+                <i class="fa-solid fa-quote-right absolute top-10 right-10 text-slate-100 text-6xl group-hover:text-primary/10 transition-colors"></i>
+                <div class="relative z-10">
+                    <div class="flex items-center gap-2 mb-6 text-purple-500 text-sm font-bold uppercase tracking-widest">
+                        <i class="fa-solid fa-house-chimney"></i> Deep Home Cleaning
+                    </div>
+                    <p class="text-slate-600 italic mb-8 leading-relaxed text-lg">"We hired them for a move-out clean and they didn't miss a single corner. The property manager was so impressed we got our full deposit back!"</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-purple-50 rounded-full flex items-center justify-center font-bold text-purple-500">AL</div>
+                        <div>
+                            <h5 class="font-bold text-slate-900">Amy Lewis</h5>
+                            <p class="text-xs text-slate-400 uppercase tracking-wider">Business Owner</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -457,6 +723,18 @@
         </div>
     </div>
 </section>
+
+<style>
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+</style>
 
 <section id="gallery" class="py-24 bg-white">
     <div class="container mx-auto px-4">

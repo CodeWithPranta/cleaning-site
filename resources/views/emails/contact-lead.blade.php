@@ -1,5 +1,5 @@
 <div style="font-family: sans-serif; max-width: 600px; margin: auto; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px;">
-    <h2 style="color: #2563eb; margin-bottom: 20px;">Duct Cleaning Request</h2>
+    <h2 style="color: #2563eb; margin-bottom: 20px;">Cleaning Request</h2>
     <div style="margin-bottom: 10px;"><strong>Name:</strong> {{ $details['name'] }}</div>
     <div style="margin-bottom: 10px;"><strong>Phone:</strong> {{ $details['phone'] }}</div>
     <div style="margin-bottom: 10px;"><strong>Email:</strong> {{ $details['email'] }}</div>
