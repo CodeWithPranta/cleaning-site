@@ -14,7 +14,7 @@
             <a href="/" class="block w-full bg-primary text-white py-4 rounded-2xl font-bold hover:shadow-lg transition-all">
                 Return to Home
             </a>
-            <a href="https://wa.me/16306579279" class="block w-full bg-emerald-50 text-emerald-600 py-4 rounded-2xl font-bold hover:bg-emerald-100 transition-all flex items-center justify-center gap-2">
+            <a href="https://wa.me/14699608366" class="block w-full bg-emerald-50 text-emerald-600 py-4 rounded-2xl font-bold hover:bg-emerald-100 transition-all flex items-center justify-center gap-2">
                 <i class="fa-brands fa-whatsapp text-xl"></i> Chat on WhatsApp
             </a>
         </div>

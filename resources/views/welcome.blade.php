@@ -238,12 +238,12 @@
         }
     });
 </script>
-
 <section id="services" class="py-24 bg-slate-50">
     <div class="container mx-auto px-4">
         <div class="text-center max-w-3xl mx-auto mb-16">
             <h2 class="text-primary font-bold uppercase tracking-widest text-sm mb-4">Our Core Expertise</h2>
-            <h3 class="text-4xl font-extrabold text-slate-900 mb-6">Premium Cleaning Solutions</h3>
+            <h3 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">Premium Cleaning Solutions</h3>
+            <p class="text-slate-500 text-lg">Comprehensive care for your home, from the roofline to your driveway.</p>
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -259,7 +259,7 @@
 
             <div class="bg-white p-8 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all border border-slate-100 group">
                 <div class="w-16 h-16 bg-orange-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-orange-500 transition-colors">
-                    <i class="fa-solid fa-smog text-2xl text-orange-500 group-hover:text-white"></i>
+                    <i class="fa-solid fa-fire text-2xl text-orange-500 group-hover:text-white"></i>
                 </div>
                 <h4 class="text-xl font-bold text-slate-900 mb-4">Dryer Vent Cleaning</h4>
                 <button type="button" onclick="openServiceModal('dryer-vent')" class="text-primary font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all">
@@ -283,6 +283,46 @@
                 </div>
                 <h4 class="text-xl font-bold text-slate-900 mb-4">Home Cleaning</h4>
                 <button type="button" onclick="openServiceModal('home-cleaning')" class="text-primary font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all">
+                    Learn More <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <div class="bg-white p-8 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all border border-slate-100 group">
+                <div class="w-16 h-16 bg-red-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-red-500 transition-colors">
+                    <i class="fa-solid fa-fire-extinguisher text-2xl text-red-500 group-hover:text-white"></i>
+                </div>
+                <h4 class="text-xl font-bold text-slate-900 mb-4">Chimney Cleaning</h4>
+                <button type="button" onclick="openServiceModal('chimney-cleaning')" class="text-primary font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all">
+                    Learn More <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <div class="bg-white p-8 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all border border-slate-100 group">
+                <div class="w-16 h-16 bg-teal-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-teal-500 transition-colors">
+                    <i class="fa-solid fa-couch text-2xl text-teal-500 group-hover:text-white"></i>
+                </div>
+                <h4 class="text-xl font-bold text-slate-900 mb-4">Upholstery Cleaning</h4>
+                <button type="button" onclick="openServiceModal('upholstery-cleaning')" class="text-primary font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all">
+                    Learn More <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <div class="bg-white p-8 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all border border-slate-100 group">
+                <div class="w-16 h-16 bg-amber-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-amber-500 transition-colors">
+                    <i class="fa-solid fa-droplet-slash text-2xl text-amber-500 group-hover:text-white"></i>
+                </div>
+                <h4 class="text-xl font-bold text-slate-900 mb-4">Gutter Cleaning</h4>
+                <button type="button" onclick="openServiceModal('gutter-cleaning')" class="text-primary font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all">
+                    Learn More <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <div class="bg-white p-8 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all border border-slate-100 group">
+                <div class="w-16 h-16 bg-indigo-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-indigo-500 transition-colors">
+                    <i class="fa-solid fa-car text-2xl text-indigo-500 group-hover:text-white"></i>
+                </div>
+                <h4 class="text-xl font-bold text-slate-900 mb-4">Car Detailing</h4>
+                <button type="button" onclick="openServiceModal('mobile-car-detailing')" class="text-primary font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all">
                     Learn More <i class="fa-solid fa-arrow-right"></i>
                 </button>
             </div>
@@ -527,7 +567,95 @@ const serviceData = {
             ]
         }
     ]
-}
+},
+
+    'chimney-cleaning': {
+        title: 'Professional Chimney & Fireplace Cleaning',
+        description: 'Ensure a safe and warm home with Purix Chimney Services. We remove dangerous creosote buildup, soot, and obstructions to prevent chimney fires and ensure proper ventilation for your fireplace or wood stove.',
+        highlights: ['Creosote Removal', 'Soot Extraction', 'Draft Testing', 'Flue Inspection', 'NFPA Standards', 'Mess-Free Process'],
+        video: "{{ asset('videos/chimney.mp4') }}",
+        richContent: [
+            {
+                type: 'section',
+                heading: 'Why Annual Chimney Sweeping Matters',
+                body: 'Every time you burn wood, a sticky, highly flammable substance called creosote coats your chimney walls. If ignored, this is the primary fuel for chimney fires.',
+                list: [
+                    'Eliminate creosote—the #1 cause of chimney fires',
+                    'Remove bird nests and debris blocking the flue',
+                    'Prevent carbon monoxide from backing up into your home',
+                    'Improve heating efficiency and fuel consumption',
+                    'Identify structural cracks before they become costly repairs'
+                ],
+                callout: 'Fire safety experts recommend a professional chimney inspection and sweep at least once a year before the burning season begins.'
+            }
+        ]
+    },
+
+    'upholstery-cleaning': {
+        title: 'Deep Upholstery & Furniture Revitalization',
+        description: 'Bring your furniture back to life with Purix’s specialized upholstery cleaning. Our deep-extraction process removes deep-seated dust, allergens, and tough stains from sofas, armchairs, and dining chairs without damaging delicate fabrics.',
+        highlights: ['Stain Removal', 'Odor Elimination', 'Fabric Protection', 'Pet Hair Extraction', 'Allergen Reduction', 'Quick Dry Times'],
+        video: "{{ asset('videos/upholstery.mp4') }}",
+        richContent: [
+            {
+                type: 'section',
+                heading: 'Revive Your Comfort and Health',
+                body: 'Your furniture acts like a giant filter, trapping skin cells, oils, and dust mites. Professional cleaning restores the look of your home while improving indoor air quality.',
+                list: [
+                    'Deep steam extraction for ground-in dirt and grime',
+                    'Safe treatment for microfiber, linen, velvet, and synthetic blends',
+                    'Neutralize pet odors and stubborn food stains',
+                    'Apply fabric shields to prevent future liquid penetration',
+                    'Extend the life of your expensive furniture investments'
+                ],
+                callout: 'Our eco-friendly cleaning solutions are 100% safe for children and pets, leaving no sticky chemical residue behind.'
+            }
+        ]
+    },
+
+    'gutter-cleaning': {
+        title: 'Gutter Guard & Debris Clearing',
+        description: 'Protect your home’s foundation and roofing with Purix Gutter Services. We provide a complete clean-out of leaves, silt, and clogs, followed by a full downspout flush to ensure water flows safely away from your property.',
+        highlights: ['Downspout Flushing', 'Foundation Protection', 'Debris Removal', 'Roofline Inspection', 'Ladder Safety Pro', 'Scheduled Maintenance'],
+        video: "{{ asset('videos/gutters.mp4') }}",
+        richContent: [
+            {
+                type: 'section',
+                heading: 'Prevent Costly Water Damage',
+                body: 'Clogged gutters are more than an eyesore; they cause water to pool, leading to wood rot, basement flooding, and foundation shifting.',
+                list: [
+                    'Prevent water from overflowing behind the fascia board',
+                    'Stop basement flooding caused by poor water diversion',
+                    'Discourage mosquitoes and pests from breeding in standing water',
+                    'Prevent heavy, debris-filled gutters from pulling away from the roof',
+                    'Verify that all downspouts are clear and draining properly'
+                ],
+                callout: 'Gutter cleaning is most critical in late Spring and late Fall to prepare for heavy rain and winter ice damming.'
+            }
+        ]
+    },
+
+    'mobile-car-detailing': {
+        title: 'Showroom-Quality Mobile Auto Detailing',
+        description: 'Experience luxury convenience with Purix Mobile Detailing. We bring the elite car wash experience to your driveway, providing meticulous interior and exterior care that preserves your vehicle’s value and beauty.',
+        highlights: ['Paint Correction', 'Ceramic Coating', 'Interior Steam', 'Leather Treatment', 'Engine Bay Detail', 'At-Home Service'],
+        video: "{{ asset('videos/car-detail.mp4') }}",
+        richContent: [
+            {
+                type: 'section',
+                heading: 'Elite Protection on Your Schedule',
+                body: 'Our detailing service goes beyond a simple wash. We use premium waxes and specialized tools to protect your car from UV rays, road salt, and daily wear.',
+                list: [
+                    'Full exterior hand wash and clay bar treatment',
+                    'Deep interior vacuuming and steam-disinfecting',
+                    'UV protection for dashboards and plastic trims',
+                    'Premium wax or sealant for long-lasting paint shine',
+                    'Tire dressing and rim restoration for a polished look'
+                ],
+                callout: 'A well-detailed car maintains a significantly higher resale value and protects your paint from environmental oxidation.'
+            }
+        ]
+    }
 };
 
 function buildRichContent(richContent) {

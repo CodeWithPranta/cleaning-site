@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="https://img.icons8.com/fluency/48/layers.png">
+    <link rel="icon" type="image/png" href="{{asset('images/duct-logo.png')}}">
     <title>Purix Home Services</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
@@ -59,7 +59,7 @@
             </div>
 
             <div class="flex items-center gap-4 border-l border-slate-700 pl-4">
-                <a href="https://www.facebook.com/PurixHomeServices" target="_blank" class="hover:text-blue-400 transition-colors">
+                <a href="https://www.facebook.com/PurixHomeService" target="_blank" class="hover:text-blue-400 transition-colors">
                     <i class="fa-brands fa-facebook-f"></i>
                 </a>
                 <a href="https://www.instagram.com/purixhomeservices/" target="_blank" class="hover:text-blue-400 transition-colors">
@@ -116,31 +116,30 @@
     <footer class="bg-sky-950 text-slate-200 py-10 border-t border-white/5">
         <div class="container mx-auto px-4">
             
-            <div class="flex flex-col items-center text-center mb-8 pb-8 border-b border-white/5">
-                <span class="text-[10px] md:text-xs uppercase tracking-[0.3em] text-blue-400 font-black mb-4">
-                    Our Physical Location
-                </span>
-                
-                <div class="inline-flex flex-col md:flex-row items-center gap-4 bg-white/5 px-8 py-4 rounded-[2rem] border border-white/10 shadow-xl backdrop-blur-sm">
-                    <div class="flex items-center gap-3">
-                        <i class="fa-solid fa-location-dot text-primary text-xl"></i>
-                        <span class="text-lg md:text-xl font-extrabold tracking-tight">
-                            525 W Westchester Pkwy,
-                        </span>
-                    </div>
-                    <span class="hidden md:block text-primary/30 text-xl font-light">|</span> 
-                    <span class="text-lg md:text-xl font-bold text-slate-300">
-                        Grand Prairie, TX 75052
+        <div class="flex flex-col items-center text-center mb-8 pb-8 border-b border-white/5">
+            <span class="text-[10px] md:text-xs uppercase tracking-[0.3em] text-blue-400 font-black mb-4">
+                Our Service Coverage
+            </span>
+            
+            <div class="inline-flex flex-col md:flex-row items-center gap-4 bg-white/5 px-8 py-4 rounded-[2rem] border border-white/10 shadow-xl backdrop-blur-sm">
+                <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-earth-americas text-primary text-xl"></i>
+                    <span class="text-lg md:text-xl font-extrabold tracking-tight">
+                        Nationwide Service
                     </span>
                 </div>
-                
-                {{-- Quick Link to Google Maps --}}
-                <a href="https://www.google.com/maps/search/?api=1&query=525+W+Westchester+Pkwy+Grand+Prairie+TX+75052" 
-                target="_blank" 
-                class="mt-4 text-xs text-blue-400/60 hover:text-primary transition-all flex items-center gap-2">
-                    <i class="fa-solid fa-up-right-from-square"></i> Get Directions
-                </a>
+                <span class="hidden md:block text-primary/30 text-xl font-light">|</span> 
+                <span class="text-lg md:text-xl font-bold text-slate-300 italic">
+                    Serving All 50 States, USA
+                </span>
             </div>
+            
+            {{-- Anchor Link to Services or Contact --}}
+            <a href="#services" 
+            class="mt-4 text-xs text-blue-400/60 hover:text-primary transition-all flex items-center gap-2">
+                <i class="fa-solid fa-map-location-dot"></i> View All Service Areas
+            </a>
+        </div>
 
             <div class="flex flex-col md:flex-row justify-between items-center gap-6 text-sm opacity-60">
                 <p class="order-2 md:order-1 text-center md:text-left">
